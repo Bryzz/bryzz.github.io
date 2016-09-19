@@ -1,7 +1,7 @@
 /* Adding custom font */
 @font-face {
 	font-family: arcadeFont;
-	src: url('../font/ARCADECLASSIC.ttf');
+	src: url('../font/ARCADECLASSIC.TTF');
 }
 
 /* Editing body's properties */
