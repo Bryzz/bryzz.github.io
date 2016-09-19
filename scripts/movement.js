@@ -5,6 +5,7 @@ var hasShot = false;
 var step = 0;
 
 $("#playerShip").css('margin-left', displacement); // placing ship
+$("#playerProjectile").css("display", "none"); // hiding projectile
 
 document.onkeydown = action;
 
@@ -60,7 +61,18 @@ function checkCollision() {
       $("#playerProjectile").css("top", "0");
       hasShot = false;
     }
-    else if (true) {
+    else if ( !((($("#playerProjectile").offset().top + $("#playerProjectile").height()) < ($("#enemyShip").offset().top)) ||
+        ($("#playerProjectile").offset().top > ($("#enemyShip").offset().top + $("#enemyShip").height())) ||
+        (($("#playerProjectile").offset().left + $("#playerProjectile").width()) < $("#enemyShip").offset().left) ||
+        ($("#playerProjectile").offset().left > ($("#enemyShip").offset().left + $("#enemyShip").width())))) {
+      // the projectile hits a CV. Good job, you just ruined someone's hopes.
+      $("#playerProjectile").css("display", "none");
+      $("#playerProjectile").css("top", "0");
+      $("#explosion").css("top", $("#enemyShip").offset().top - 26);
+      $("#explosion").css("left", $("#enemyShip").offset().left - 19);
+      $("#explosion").attr("src","");
+      $("#enemyShip").css("display","none");
+      $("#explosion").attr("src","img/ship/cv_enemy_explosion.gif");
       // TODO
     }
   }

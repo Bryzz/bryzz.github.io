@@ -1,7 +1,7 @@
 /* Adding custom font */
 @font-face {
 	font-family: arcadeFont;
-	src: url('../font/ARCADECLASSIC.TTF');
+	src: url('../font/ARCADECLASSIC.ttf');
 }
 
 /* Editing body's properties */
@@ -11,6 +11,14 @@ body {
   width: 800px;
   margin: auto;
   margin-top: 20px;
+}
+
+a {
+	color: grey;
+}
+
+a:visited {
+	color: grey;
 }
 
 /* Adding a keyword to describe an animation */
@@ -41,8 +49,20 @@ body {
 	animation: animatedBackground 60000s linear infinite;
 }
 
-/* */
+/* Absolute value for the projectile's position so it can be moved anywhere */
 #playerProjectile {
+	position: absolute;
+}
+
+/* Absolute value for the CV's position so it can be moved anywhere */
+#enemyShip {
+	position: absolute;
+	left: 780px;
+	top: 280px;
+}
+
+/* KABOOM */
+#explosion {
 	position: absolute;
 }
 
@@ -52,9 +72,6 @@ body {
 	margin-left: 10px;
 	width: 780px;
 	height: 450px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: white;
 }
 
 /* Pretty much self explanatory */
