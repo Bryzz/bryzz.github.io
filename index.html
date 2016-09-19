@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- The game as a title... As well as its page !   -->
+<title>Juste un autre CV</title>
+
+<!-- Setting to UTF-8 because I love it. Also needed for French weird characters -->
+<meta charset="UTF-8">
+
+<!-- Importing JQuery from an external source -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Importing style sheet -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <br/>
+
+  <!-- Game's title -->
+  <div id="title">
+    CURRICULUM &nbsp;  &nbsp; VITAE &nbsp;  &nbsp; INVADER
+
+  </div>
+
+  <br/><br/>
+
+  <!-- Game area -->
+  <div id="main">
+
+    <img src="img/projectile/player_projectile.png" id="playerProjectile"/>
+
+    <!-- Area for moving enemy ships. Fear the curriculum vitaes of doom ! -->
+    <div id="areaForEnemyShip">
+      <img src="img/ship/cv_enemy.png" id="enemyShip"/>
+    </div>
+
+    <!-- Area for moving player ship. Look, it's animated ! -->
+    <div id="areaForPlayerShip">
+      <img src="img/ship/player_ship.gif" id="playerShip"/>
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <!-- Essential area for people who worked on this, directly or not, willingly or not -->
+  <div id="credits">
+    Application made by Lucas Choquet (aka Brÿzz), hosted on Github
+    <br/>
+    ARCADECLASSIC font made by <a target="_blank" href="http://www.pizzadude.dk">pizzadude</a>, used for personal use only
+  </div>
+  <script src="scripts/movement.js"></script>
+</body>
+
+</html>

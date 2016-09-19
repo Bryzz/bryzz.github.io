@@ -1,0 +1,72 @@
+/* Adding custom font */
+@font-face {
+	font-family: arcadeFont;
+	src: url('../font/ARCADECLASSIC.ttf');
+}
+
+/* Editing body's properties */
+body {
+  background-color: black;
+  color: white;
+  width: 800px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* Adding a keyword to describe an animation */
+@keyframes animatedBackground {
+	from { background-position: 100000% 2000000%;}
+	to { background-position: 0 0; }
+}
+
+/* Properties for making a quite classy title for a small game */
+#title {
+  font-family: arcadeFont;
+  font-size: 56px;
+  text-align: center;
+}
+
+
+/* The game's area properties. Look, there's an animated background ! */
+#main	{
+  border-radius: 20px;
+	width: 800px;
+	height: 600px;
+  margin:auto;
+	background-image: url("../img/background/space.png");
+  border-style: solid;
+  border-color: white;
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	animation: animatedBackground 60000s linear infinite;
+}
+
+/* */
+#playerProjectile {
+	position: absolute;
+}
+
+/* Pretty much self explanatory */
+#areaForEnemyShip {
+	margin-top: 20px;
+	margin-left: 10px;
+	width: 780px;
+	height: 450px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+}
+
+/* Pretty much self explanatory */
+#areaForPlayerShip {
+	margin-top: 60px;
+	margin-left: 10px;
+	width: 780px;
+	height: 32px;
+}
+
+/* Styles added for this little portion of text few people actually read */
+#credits {
+  font-size: 12px;
+  color: darkgrey;
+}
