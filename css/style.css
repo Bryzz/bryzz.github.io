@@ -29,9 +29,9 @@ a:visited {
 
 /* Adding keyword for pattern 1 */
 @keyframes pattern1 {
-	0% {left: 33%; top: 30%;}
-	50% {left: 63%; top: 30%;}
-	100% {left: 33%; top: 30%;}
+	0% {left: 4%; top: 30%;}
+	50% {left: 88%; top: 30%;}
+	100% {left: 4%; top: 30%;}
 }
 
 /* Properties for making a quite classy title for a small game */
@@ -63,7 +63,7 @@ a:visited {
 
 /* Absolute value for the CV's position so it can be moved anywhere */
 #enemyShipSkills {
-	position: absolute;
+	position: relative;
 	animation: pattern1 3s linear infinite;
 }
 #enemyShipExperience {
