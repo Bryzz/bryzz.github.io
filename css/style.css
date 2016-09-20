@@ -119,11 +119,11 @@ a:visited {
 }
 #enemyShipExperience {
 	position: relative;
-	animation: pattern2 2s linear infinite;
+	animation: pattern2 3.5s linear infinite;
 }
 #enemyShipFormation {
 	position: relative;
-	animation: pattern3 2s linear infinite;
+	animation: pattern3 4s linear infinite;
 }
 
 /* KABOOM */
