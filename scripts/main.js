@@ -9,6 +9,7 @@ $("#playerShip").css('margin-left', displacement); // placing ship
 $("#playerProjectile").css("display", "none"); // hiding projectile
 
 document.getElementById("areaForPlayerShip").onmousemove = function(e) {
+    // the user's mouse cursor is in the green area : he moves the ship
     var spanLeft = $("#areaForPlayerShip").offset().left + 15  ;
     document.getElementById("playerShip").style.marginLeft = e.pageX*1 - spanLeft + "px";
     if (document.getElementById("playerShip").style.marginLeft.replace("px","") < 0) {
@@ -20,6 +21,7 @@ document.getElementById("areaForPlayerShip").onmousemove = function(e) {
 }
 
 document.getElementById("areaForPlayerShip").onclick = function(e) {
+  // the user clicks in the green area : he shoots
   if (hasShot == false) {
     $("#playerProjectile").css("display", "");
     $("#playerProjectile").css("top", $("#playerShip").offset().top - 12);
@@ -37,7 +39,7 @@ function checkCollision() {
   if (hasShot == true) {
     $("#playerProjectile").css("top", parseInt($("#playerProjectile").css("top").replace("px",""))-10);
     if ($("#playerProjectile").offset().top <= $("#main").offset().top) {
-      // The projectile reaches the screen's top
+      // The projectile reaches the screen's top. Welp, you missed.
       $("#playerProjectile").css("display", "none");
       $("#playerProjectile").css("top", "0");
       hasShot = false;

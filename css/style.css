@@ -59,11 +59,22 @@ a:visited {
 	100% {left: 29%; top: 45%;}
 }
 
-/* Adding keyword for pattern 3 */
+/* Adding keyword for pattern 3
+
+
+3								1
+	\						/
+	 \				/
+	  \			/
+		 \	/
+		  2
+*/
 @keyframes pattern3 {
-	0% {left: 4%; top: 30%;}
-	50% {left: 88%; top: 30%;}
-	100% {left: 4%; top: 30%;}
+	0% {left: 85%; top: 40%;}
+	25% {left: 37.5%; top: 80%;}
+	50% {left: -8%; top: 40%;}
+	75% {left: 37.5%; top: 80%;}
+	100% {left: 85%; top: 40%;}
 }
 
 /* Properties for making a quite classy title for a small game */
@@ -104,7 +115,7 @@ a:visited {
 }
 #enemyShipFormation {
 	position: relative;
-	/*animation: pattern3 4s linear infinite;*/
+	animation: pattern3 2.5s linear infinite;
 }
 
 /* KABOOM */
