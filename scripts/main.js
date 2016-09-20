@@ -24,7 +24,7 @@ document.getElementById("main").onmousemove = function(e) {
 
 document.getElementById("main").onclick = function(e) {
   // the user clicks in the green area : he shoots
-  if (hasShot == false) {
+  if (hasShot == false && step < 3) {
     $("#playerProjectile").css("display", "");
     $("#playerProjectile").css("top", $("#playerShip").offset().top - 12);
     $("#playerProjectile").css("left", $("#playerShip").offset().left + 13);
