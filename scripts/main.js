@@ -58,6 +58,7 @@ function checkCollision() {
       $("#explosion").attr("src","img/ship/cv_enemy_explosion.gif");
       hasShot = false;
       showSkills();
+      step++;
     }
     else if ( !((($("#playerProjectile").offset().top + $("#playerProjectile").height()) < ($("#enemyShipExperience").offset().top)) ||
         ($("#playerProjectile").offset().top > ($("#enemyShipExperience").offset().top + $("#enemyShipExperience").height())) ||
@@ -73,6 +74,7 @@ function checkCollision() {
       $("#explosion").attr("src","img/ship/cv_enemy_explosion.gif");
       hasShot = false;
       showExperience();
+      step++;
     }
     else if ( !((($("#playerProjectile").offset().top + $("#playerProjectile").height()) < ($("#enemyShipFormation").offset().top)) ||
         ($("#playerProjectile").offset().top > ($("#enemyShipFormation").offset().top + $("#enemyShipFormation").height())) ||
@@ -88,6 +90,42 @@ function checkCollision() {
       $("#explosion").attr("src","img/ship/cv_enemy_explosion.gif");
       hasShot = false;
       showFormation();
+      step++;
     }
   }
+  if (step == 3) {
+    $("#main").fadeOut("slow");
+    /*
+    $("#congratulations").fadeOut(0);
+    $("#congratulations").css("display","");
+    $("#congratulations").fadeIn("slow");
+    */
+    setTimeout ( function() {
+      $("#congratulations").fadeOut(0);
+      $("#congratulations").css("display","");
+      $("#congratulations").fadeIn("slow");
+    }, 500 );
+    $("#rewardContact").fadeOut(0);
+    $("#rewardContact").css("display","");
+    $("#rewardContact").fadeIn("slow");
+    step++;
+  }
+}
+
+function showSkills() {
+  $("#rewardSkills").fadeOut(0);
+  $("#rewardSkills").css("display","");
+  $("#rewardSkills").fadeIn("slow");
+}
+
+function showExperience() {
+  $("#rewardExperience").fadeOut(0);
+  $("#rewardExperience").css("display","");
+  $("#rewardExperience").fadeIn("slow");
+}
+
+function showFormation() {
+  $("#rewardFormation").fadeOut(0);
+  $("#rewardFormation").css("display","");
+  $("#rewardFormation").fadeIn("slow");
 }
