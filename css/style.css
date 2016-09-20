@@ -21,10 +21,17 @@ a:visited {
 	color: grey;
 }
 
-/* Adding a keyword to describe an animation */
+/* Adding keyword for background animation */
 @keyframes animatedBackground {
 	from { background-position: 100000% 2000000%;}
 	to { background-position: 0 0; }
+}
+
+/* Adding keyword for pattern 1 */
+@keyframes pattern1 {
+	0% {left: 33%; top: 30%;}
+	50% {left: 63%; top: 30%;}
+	100% {left: 33%; top: 30%;}
 }
 
 /* Properties for making a quite classy title for a small game */
@@ -57,6 +64,7 @@ a:visited {
 /* Absolute value for the CV's position so it can be moved anywhere */
 #enemyShipSkills {
 	position: absolute;
+	animation: pattern1 3s linear infinite;
 }
 #enemyShipExperience {
 	position: absolute;
@@ -67,6 +75,7 @@ a:visited {
 
 /* KABOOM */
 #explosion {
+	z-index: 400;
 	position: absolute;
 }
 
