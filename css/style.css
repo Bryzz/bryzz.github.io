@@ -27,8 +27,40 @@ a:visited {
 	to { background-position: 0 0; }
 }
 
-/* Adding keyword for pattern 1 */
+/* Adding keyword for pattern 1
+
+1 <-----------> 2
+
+*/
 @keyframes pattern1 {
+	0% {left: 4%; top: 5%;}
+	50% {left: 88%; top: 5%;}
+	100% {left: 4%; top: 5%;}
+}
+
+/* Adding keyword for pattern 2
+					2					6
+				 / \			/		\
+				/		\	  /			 \
+			3			1.5.9				7
+				\		/		\			/
+				 \ /		 \	/
+				 	4				8
+*/
+@keyframes pattern2 {
+	0% {left: 29%; top: 45%;}
+	12% {left: 13.5%; top: 15%;}
+	24% {left: 2%; top: 45%;}
+	36% {left: 13.5%; top: 75%;}
+	48% {left: 29%; top: 45%;}
+	60% {left: 44.5%; top: 15%;}
+	72% {left: 60%; top: 45%;}
+	84% {left: 44.5%; top: 75%;}
+	100% {left: 29%; top: 45%;}
+}
+
+/* Adding keyword for pattern 3 */
+@keyframes pattern3 {
 	0% {left: 4%; top: 30%;}
 	50% {left: 88%; top: 30%;}
 	100% {left: 4%; top: 30%;}
@@ -67,10 +99,12 @@ a:visited {
 	animation: pattern1 3s linear infinite;
 }
 #enemyShipExperience {
-	position: absolute;
+	position: relative;
+	animation: pattern2 2s linear infinite;
 }
 #enemyShipFormation {
-	position: absolute;
+	position: relative;
+	/*animation: pattern3 4s linear infinite;*/
 }
 
 /* KABOOM */
