@@ -1,26 +1,28 @@
 /* Initializing player ship's position */
 
-var displacement = 368; // width is 720, player's ship width is 32. Value = (720 / 2) - (32 / 2)
 var hasShot = false;
 var step = 0;
 var cvHasBeenPlaced = false;
 
-$("#playerShip").css('margin-left', displacement); // placing ship
+$("#playerShip").css('margin-left', "45%"); // placing ship
+$("#playerShip").css('margin-top',"37%"); // placing ship
 $("#playerProjectile").css("display", "none"); // hiding projectile
 
-document.getElementById("areaForPlayerShip").onmousemove = function(e) {
-    // the user's mouse cursor is in the green area : he moves the ship
-    var spanLeft = $("#areaForPlayerShip").offset().left + 15  ;
-    document.getElementById("playerShip").style.marginLeft = e.pageX*1 - spanLeft + "px";
-    if (document.getElementById("playerShip").style.marginLeft.replace("px","") < 0) {
-      document.getElementById("playerShip").style.marginLeft = 0;
-    }
-    if (document.getElementById("playerShip").style.marginLeft.replace("px","") > 748) {
-      document.getElementById("playerShip").style.marginLeft = 748+"px";
-    }
+document.getElementById("main").onmousemove = function(e) {
+      if (step < 3) {
+        var displacement = e.pageX*1 - $("#main").offset().left;
+        document.getElementById("playerShip").style.marginLeft = displacement - 17 + "px";
+        document.getElementById("playerShip").style.marginTop = 37 + step*4.9 + "%";
+        if (document.getElementById("playerShip").style.marginLeft.replace("px","") < 0) {
+          document.getElementById("playerShip").style.marginLeft = 0;
+        }
+        if (document.getElementById("playerShip").style.marginLeft.replace("px","") > 768) {
+          document.getElementById("playerShip").style.marginLeft = 768+"px";
+        }
+      }
 }
 
-document.getElementById("areaForPlayerShip").onclick = function(e) {
+document.getElementById("main").onclick = function(e) {
   // the user clicks in the green area : he shoots
   if (hasShot == false) {
     $("#playerProjectile").css("display", "");
@@ -92,22 +94,28 @@ function checkCollision() {
       showFormation();
       step++;
     }
+    if (step == 3) {
+      document.getElementById("playerShip").style.marginTop = 37 + 3*4.9 + "%"
+    }
+    else {
+      document.getElementById("playerShip").style.marginTop = 37 + step*4.9 + "%"
+    }
   }
   if (step == 3) {
-    $("#main").fadeOut("slow");
+    $("#main").fadeOut(1500);
     /*
     $("#congratulations").fadeOut(0);
     $("#congratulations").css("display","");
-    $("#congratulations").fadeIn("slow");
+    $("#congratulations").fadeIn(3000);
     */
     setTimeout ( function() {
       $("#congratulations").fadeOut(0);
       $("#congratulations").css("display","");
-      $("#congratulations").fadeIn("slow");
-    }, 500 );
+      $("#congratulations").fadeIn(1000);
+    }, 1500 );
     $("#rewardContact").fadeOut(0);
     $("#rewardContact").css("display","");
-    $("#rewardContact").fadeIn("slow");
+    $("#rewardContact").fadeIn(3000);
     step++;
   }
 }
@@ -115,17 +123,17 @@ function checkCollision() {
 function showSkills() {
   $("#rewardSkills").fadeOut(0);
   $("#rewardSkills").css("display","");
-  $("#rewardSkills").fadeIn("slow");
+  $("#rewardSkills").fadeIn(3000);
 }
 
 function showExperience() {
   $("#rewardExperience").fadeOut(0);
   $("#rewardExperience").css("display","");
-  $("#rewardExperience").fadeIn("slow");
+  $("#rewardExperience").fadeIn(3000);
 }
 
 function showFormation() {
   $("#rewardFormation").fadeOut(0);
   $("#rewardFormation").css("display","");
-  $("#rewardFormation").fadeIn("slow");
+  $("#rewardFormation").fadeIn(3000);
 }
