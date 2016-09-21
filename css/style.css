@@ -105,6 +105,7 @@ a:visited {
 	background-position: 0px 0px;
 	background-repeat: repeat;
 	animation: animatedBackground 60000s linear infinite;
+	cursor: pointer;
 }
 
 /* Absolute value for the projectile's position so it can be moved anywhere */
